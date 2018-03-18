@@ -16,20 +16,23 @@ c.newpin("spindle_rev",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("vacuum_pump",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("servo_tool",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("enable_A",hal.HAL_BIT,hal.HAL_IN)
+c.newpin("A_axis_speed",hal.HAL_S32,hal.HAL_IN)
 #c.newpin("temperature",hal.HAL_FLOAT,hal.HAL_OUT)
 
 time.sleep(1)
 c.ready()
 
-spindle_rev=c['spindle_rev']
-vacuum_pump=c['vacuum_pump']
-servo_tool =c['servo_tool']
-enable_A   =c['enable_A']
+spindle_rev  =c['spindle_rev']
+vacuum_pump  =c['vacuum_pump']
+servo_tool   =c['servo_tool']
+enable_A     =c['enable_A']
+A_axis_speed =c['A_axis_speed']
 
 spindle_rev_old='False'
 vacuum_pump_old='False'
 servo_tool_old='False'
 enable_A_old='False'
+A_axis_speed_old=0
 #temperature_old=0
 
 try:
@@ -61,12 +64,18 @@ try:
           ser.write("U")
 # Enable A
     enable_A=c['enable_A']
-    if enable_A!=enable_A:
+    if enable_A!=enable_A_old:
        enable_A_old=enable_A
        if enable_A==False:
           ser.write("C")
        elif enable_A==True:
           ser.write("D")
+# A Axis Speed
+    A_axis_speed=c['A_axis_speed']
+    if A_axis_speed!=A_axis_speed_old:
+       A_axis_speed_old=A_axis_speed
+       ser.write(A_axis_speed)
+
 # Temperature
     #while ser.inWaiting():
        #temp = ser.read(5)

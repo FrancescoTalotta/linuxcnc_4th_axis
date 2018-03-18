@@ -11,51 +11,59 @@
      <max_>24000</max_>
     </bar>
   </vbox>
+
+ <button>
+     <halpin>"center-here-xyz"</halpin>
+     <text>"SET G54 Center XYZ"</text>
+     <font>('Fixed',10)</font>
+     <bg>"#7fdbb1"</bg>
+     <fg>"#000000"</fg>
+ </button>
+
  <button>
      <halpin>"rapid-to-home"</halpin>
      <text>"GO Home XYZ"</text> 
      <font>('Fixed',9)</font>
+     <bg>"#ffc1c8"</bg>
+     <fg>"#000000"</fg>
  </button>
 
  <button>
      <halpin>"rapid-to-home-xy"</halpin>
      <text>"GO Home XY"</text> 
      <font>('Fixed',9)</font>
+     <bg>"#ffc1c8"</bg>
+     <fg>"#000000"</fg>
  </button>
 
  <button>
      <halpin>"go-away-xyz"</halpin>
      <text>"Free Area XYZ"</text> 
      <font>('Fixed',9)</font>
+     <bg>"#ffc1c8"</bg>
+     <fg>"#000000"</fg>
  </button>
 
  <button>
      <halpin>"recenter"</halpin>
      <text>"Recenter XY"</text> 
      <font>('Fixed',9)</font>
+     <bg>"#c8ebf7"</bg>
+     <fg>"#000000"</fg>
  </button>
 
  <button>
      <halpin>"find-center"</halpin>
      <text>"Find Center"</text> 
      <font>('Fixed',9)</font>
+     <bg>"#c8ebf7"</bg>
+     <fg>"#000000"</fg>
  </button>
 
- <button>
-     <halpin>"center-here"</halpin>
-     <text>"SET G54 Center XY"</text> 
-     <font>('Fixed',9)</font>
- </button>
-
- <button>
-     <halpin>"center-here-xyz"</halpin>
-     <text>"SET G54 Center XYZ"</text> 
-     <font>('Fixed',9)</font>
- </button>
 
  <hbox>
      <relief>GROOVE</relief>
-     <bd>2</bd>
+     <bd>3</bd>
      <label>
          <text>"PROBE"</text>
          <font>('Helvetica',13)</font>
@@ -68,13 +76,13 @@
       </led>
  </hbox>
 
+
  <vbox>
+  <labelframe text="Quarto Asse">
+  <font>("Helvetica",12)</font>
    <relief>RIDGE</relief>
-   <bd>4</bd>
-    <label>
-       <text>"Quarto Asse"</text>
-       <font>("Helvetica",12)</font>
-    </label>
+   <bd>5</bd>
+
     <hbox>
       <checkbutton>
          <halpin>"enable_A"</halpin>
@@ -83,12 +91,31 @@
       </checkbutton>
       <rectled>
          <halpin>"enable_led"</halpin>
-         <height>"26"</height>
-         <width>"26"</width>
+         <height>"24"</height>
+         <width>"24"</width>
          <on_color>"green"</on_color>
          <off_color>"red"</off_color>
       </rectled>
     </hbox>
+
+    <vbox>
+     <relief>GROOVE</relief>
+     <bd>2</bd>
+     <label>
+         <text>"Rotational Speed:"</text>
+         <font>("Helvetica",11)</font>
+     </label>
+     <scale>
+        <font>("Helvetica",11)</font>
+        <halpin>"A_axis_speed"</halpin>
+        <resolution>100</resolution>
+        <orient>HORIZONTAL</orient>
+        <min_>0</min_>
+        <max_>1000</max_>
+     </scale>
+    </vbox>
+
+  </labelframe>
  </vbox>
 
 </pyvcp>
