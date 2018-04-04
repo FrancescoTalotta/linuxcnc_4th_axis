@@ -74,6 +74,12 @@
         <on_color>"green"</on_color>
         <off_color>"red"</off_color>
       </led>
+
+      <checkbutton>
+         <halpin>"probe_3d"</halpin>
+         <text>"Probe 3D"</text>
+         <font>("Helvetica",10)</font>
+      </checkbutton>
  </hbox>
 
 
@@ -83,17 +89,40 @@
    <relief>RIDGE</relief>
    <bd>5</bd>
 
+     <button>
+        <halpin>"center-here-a"</halpin>
+        <text>"SET G54 Zero A"</text>
+        <font>('Fixed',9)</font>
+        <bg>"#7fdbb1"</bg>
+        <fg>"#000000"</fg>
+    </button>
+
     <hbox>
       <checkbutton>
          <halpin>"enable_A"</halpin>
-         <text>"Enable "</text>
-       <font>("Helvetica",11)</font>
+         <text>"Enable A"</text>
+         <font>("Helvetica",11)</font>
       </checkbutton>
       <rectled>
          <halpin>"enable_led"</halpin>
          <height>"24"</height>
          <width>"24"</width>
          <on_color>"green"</on_color>
+         <off_color>"red"</off_color>
+      </rectled>
+    </hbox>
+
+    <hbox>
+      <checkbutton>
+         <halpin>"run_A_axis"</halpin>
+         <text>"Rotazione Continua"</text>
+         <font>("Helvetica",10)</font>
+      </checkbutton>
+      <rectled>
+         <halpin>"run_A_axis_led"</halpin>
+         <height>"24"</height>
+         <width>"24"</width>
+         <on_color>"yellow"</on_color>
          <off_color>"red"</off_color>
       </rectled>
     </hbox>

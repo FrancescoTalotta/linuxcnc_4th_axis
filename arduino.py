@@ -16,6 +16,8 @@ c.newpin("spindle_rev",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("vacuum_pump",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("servo_tool",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("enable_A",hal.HAL_BIT,hal.HAL_IN)
+c.newpin("run_A_axis",hal.HAL_BIT,hal.HAL_IN)
+c.newpin("probe_3d",hal.HAL_BIT,hal.HAL_IN)
 c.newpin("A_axis_speed",hal.HAL_S32,hal.HAL_IN)
 #c.newpin("temperature",hal.HAL_FLOAT,hal.HAL_OUT)
 
@@ -26,6 +28,8 @@ spindle_rev  =c['spindle_rev']
 vacuum_pump  =c['vacuum_pump']
 servo_tool   =c['servo_tool']
 enable_A     =c['enable_A']
+run_A_axis   =c['run_A_axis']
+probe_3d     =c['probe_3d']
 A_axis_speed =c['A_axis_speed']
 
 spindle_rev_old='False'
@@ -33,6 +37,8 @@ vacuum_pump_old='False'
 servo_tool_old='False'
 enable_A_old='False'
 A_axis_speed_old=0
+run_A_axis_old='False'
+probe_3d_old='False'
 #temperature_old=0
 
 try:
@@ -75,6 +81,22 @@ try:
     if A_axis_speed!=A_axis_speed_old:
        A_axis_speed_old=A_axis_speed
        ser.write(A_axis_speed)
+# Run A Axis
+    run_A_axis=c['run_A_axis']
+    if run_A_axis!=run_A_axis_old:
+       run_A_axis_old=run_A_axis
+       if run_A_axis==False:
+          ser.write("G")
+       elif run_A_axis==True:
+          ser.write("H")
+# 3D Probe
+    probe_3d=c['probe_3d']
+    if probe_3d!=probe_3d_old:
+       probe_3d_old=probe_3d
+       if probe_3d==False:
+          ser.write("L")
+       elif probe_3d==True:
+          ser.write("I")
 
 # Temperature
     #while ser.inWaiting():

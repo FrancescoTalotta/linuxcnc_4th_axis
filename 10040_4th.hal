@@ -48,7 +48,7 @@ net zdir => parport.0.pin-03-out
 net astep => parport.0.pin-08-out
 setp parport.0.pin-08-out-reset 1
 setp parport.0.pin-09-out-invert 1
-net zdir => parport.0.pin-09-out
+net adir => parport.0.pin-09-out
 
 #Limit switches with debouncing
 net debounce-x debounce.0.0.in <= parport.0.pin-13-in
@@ -112,12 +112,12 @@ net zenable axis.2.amp-enable-out => stepgen.2.enable
 net max-z => axis.2.pos-lim-sw-in axis.2.home-sw-in
 
 #A AXIS
-setp stepgen.3.position-scale [AXIS_2]SCALE
+setp stepgen.3.position-scale [AXIS_3]SCALE
 setp stepgen.3.steplen 2500
 setp stepgen.3.stepspace 2500
 setp stepgen.3.dirhold 10000
 setp stepgen.3.dirsetup 5000
-setp stepgen.3.maxaccel [AXIS_2]STEPGEN_MAXACCEL
+setp stepgen.3.maxaccel [AXIS_3]STEPGEN_MAXACCEL
 net apos-cmd axis.3.motor-pos-cmd => stepgen.3.position-cmd
 net apos-fb stepgen.3.position-fb => axis.3.motor-pos-fb
 net astep <= stepgen.3.step
