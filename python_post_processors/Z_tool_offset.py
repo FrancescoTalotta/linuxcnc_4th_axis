@@ -38,13 +38,17 @@ def main():
         else:
            print(line.replace("\r", "").replace("\n", ""))
 
+        match = re.match("(.*)STOCK RADIUS=(\d[.]\d\d)(.*)", line)
+        if match:
+           radius = float(match.group(2))
+
         match = re.match("(.*)G21(.*)", line)
         if match:
            #print("G21")
            print("O100 sub")
            print("  G49")
            print("  G54")
-           print("  #<probe_height> = 19.32")
+           print("  #<probe_height> =", radius)
            print("  G0 Z40")
            print("  (MSG,Insert Z Probe, then press S)")
            print("  M0")

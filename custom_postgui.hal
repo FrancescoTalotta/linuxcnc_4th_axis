@@ -28,6 +28,7 @@
 
 # 3D probe
  net 3D_probe arduino.probe_3d <= pyvcp.probe_3d
+ net 3D_probe                  => pyvcp.probe_3d_led
 
 # Temperature
  #net water_temp arduino.temperature => pyvcp.temperature 

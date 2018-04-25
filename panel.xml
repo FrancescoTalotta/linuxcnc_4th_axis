@@ -80,6 +80,14 @@
          <text>"Probe 3D"</text>
          <font>("Helvetica",10)</font>
       </checkbutton>
+
+      <rectled>
+         <halpin>"probe_3d_led"</halpin>
+         <height>"12"</height>
+         <width>"12"</width>
+         <on_color>"green"</on_color>
+         <off_color>"red"</off_color>
+      </rectled>
  </hbox>
 
 

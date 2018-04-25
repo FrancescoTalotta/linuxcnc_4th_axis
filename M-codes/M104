@@ -1,0 +1,8 @@
+#!/bin/bash
+
+zenity --warning --text "Stacca il probe a 3 dimensioni"
+
+halcmd net 3D_probe arduino.probe_3d pyvcp.probe_3d
+halcmd net 3D_probe                  pyvcp.probe_3d_led
+
+exit 0
