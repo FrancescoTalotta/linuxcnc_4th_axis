@@ -6,9 +6,11 @@
  net remote-rapid-to-home-xy  halui.mdi-command-01    <= pyvcp.rapid-to-home-xy
  net remote-go-away-xyz       halui.mdi-command-02    <= pyvcp.go-away-xyz
  net remote-recenter          halui.mdi-command-03    <= pyvcp.recenter
- net remote-find-center       halui.mdi-command-04    <= pyvcp.find-center
+ #net remote-find-center       halui.mdi-command-04    <= pyvcp.find-center
  net center-here-a            halui.mdi-command-05    <= pyvcp.center-here-a
  net center-here-xyz          halui.mdi-command-06    <= pyvcp.center-here-xyz
+ net call-centra-asta         halui.mdi-command-07    <= pyvcp.call-centra-asta
+
  net probe                    parport.0.pin-11-in-not <= pyvcp.probe
 
 #Set up spindle speed control

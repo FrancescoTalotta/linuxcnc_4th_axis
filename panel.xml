@@ -53,8 +53,8 @@
  </button>
 
  <button>
-     <halpin>"find-center"</halpin>
-     <text>"Find Center"</text> 
+     <halpin>"call-centra-asta"</halpin>
+     <text>"Centra Asta"</text> 
      <font>('Fixed',9)</font>
      <bg>"#c8ebf7"</bg>
      <fg>"#000000"</fg>

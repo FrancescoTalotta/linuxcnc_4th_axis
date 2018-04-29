@@ -22,9 +22,10 @@ def progress(a, b):
 
 
 def main():
-    global feedrate, feedrat
+    global feedrate, feedrat, radius
     feedrate  = 0
     feedrate2 = 0
+    radius    = 0
     is_on     = True
     infile = sys.argv[1]
     f = open(infile, "r")
@@ -59,10 +60,12 @@ def main():
            print("  (MSG,Remove Z Probe, then press S)")
            print("  M0")
            print("O100 endsub")
-           print("(MSG, Set the machine to the tool probe position. If already set click press S to resume. If not set press ESC and set the machine to the desireded tool probe position, then run the program again.)")
+           print("(MSG, Posizionati al centro del diametro  dell'asta. Se sei gia posizionato, premi S per continuare. Altrimenti premi ESC per uscire dal programma e posizionati al centro del diametro dell'asta. Quindi riavvia il programma premendo R.)")
            print("M0")
            print("G28.1")
            print("M102")
+           if radius>0:
+              print("M106")
 
         match = re.match("S(\d*)(.*)M3", line)
         if (match and is_on):
@@ -74,6 +77,11 @@ def main():
         match = re.match("M5(.*)", line)
         if match:
             is_on= True
+
+        match = re.match("M100", line) 
+        if match:
+            if radius>0:
+               print("M107")
 
 if __name__ == '__main__':
     main()

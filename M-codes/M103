@@ -1,6 +1,7 @@
 #!/bin/bash
+#This routine switches on the linuxcnc pin for the 3d probe 
 
-zenity --warning --text "Inserisci il probe a 3 dimensioni"
+zenity --warning --text "Collega il probe a 3 dimensioni"
 
 halcmd unlinkp arduino.probe_3d
 halcmd unlinkp pyvcp.probe_3d_led
