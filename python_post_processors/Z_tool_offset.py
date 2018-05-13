@@ -30,7 +30,7 @@ def main():
     infile = sys.argv[1]
     f = open(infile, "r")
     for line in f:
-        match = re.match("T(\d\d)(.*)M(\d.*)", line)
+        match = re.match("T(\d{1,2})(.*)M(\d.*)", line)
         if match:
             tool = int(match.group(1))
             print("M101 P%d" % tool)
@@ -49,7 +49,7 @@ def main():
            print("O100 sub")
            print("  G49")
            print("  G54")
-           print("  #<probe_height> =", radius)
+           print("  #<probe_height> =", radius+19.32)
            print("  G0 Z40")
            print("  (MSG,Insert Z Probe, then press S)")
            print("  M0")
@@ -60,7 +60,7 @@ def main():
            print("  (MSG,Remove Z Probe, then press S)")
            print("  M0")
            print("O100 endsub")
-           print("(MSG, Posizionati al centro del diametro  dell'asta. Se sei gia posizionato, premi S per continuare. Altrimenti premi ESC per uscire dal programma e posizionati al centro del diametro dell'asta. Quindi riavvia il programma premendo R.)")
+           print("(MSG, Hai fatto il 'centra asta'? Se hai gia fatto il 'centra asta', premi S per continuare. Altrimenti premi ESC per uscire dal programma e premi il pulsante 'centra asta' a destra. Quindi riavvia il programma premendo R.)")
            print("M0")
            print("G28.1")
            print("M102")
