@@ -27,7 +27,7 @@ T26 P26 D0.300000 ;end mill 10° 0.5 mm
 T27 P27 D0.300000 Z-17.179600 ;end mill 10° 0.5 mm 
 T28 P28 D6.000000 Z-13.984500 ;flat wood 6.0 mm 
 T29 P29 D3.000000 Z-27.613328 ;one flute flat 3.0 mm 
-T30 P30 D2.000000 Z-18.724764 ;one flute flat 2.0 mm new 
+T30 P30 D2.000000 Z-11.689857 ;one flute flat 2.0 mm new 
 T31 P31 D0.700000 Z-28.255400 ;end mill flat 625 plexy 1.0 mm 
 T32 P32 D0.100000 Z-6.897400 ;end mill 15° 0.1mm prismatic 
 T33 P33 D8.000000 ;round-carve wood 8.0mm 
@@ -53,4 +53,3 @@ T52 P52 D0.400000 Z-12.837062 ;flat engraving 0.4mm
 T53 P53 D3.000000 Z-12.837062 ;flat engraving 0.4mm 
 T54 P54 D3.000000 ;one flute 3.0mm special ALU
 T55 P55 D3.000000 ;one flute 3.0mm EVO
-T56 P56 D0.200000 ;Bulino 0.2mm PCB
